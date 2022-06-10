@@ -1,19 +1,63 @@
 {
-	"extends": ["react-app", "prettier"],
-	"plugins": ["react", "prettier"],
-	"rules": {
-	  "prettier/prettier": [
-			"warn",
-				{
-					"arrowParens": "avoid",
-					"semi": false,
-					"trailingComma": "none",
-					"endOfLine": "auto",
-					"tabWidth": 2,
-					"printWidth": 80,
-					"useTabs": false
-				}
-			],
-			"no-console": "warn"
-		}
-  }
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": ["airbnb", "prettier", "plugin:react/recommended", "plugin:jsx-a11y/recommended", "plugin:react-hooks/recommended"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": ["node_modules", "src/"]
+            }
+        }
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "impliedStrict": true
+        },
+        "ecmaVersion": 12
+    },
+    "plugins": ["prettier", "react-hooks"],
+    "rules": {
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "function-declaration",
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+        "react/jsx-filename-extension": 0,
+        "no-param-reassign": 0,
+        "react/prop-types": 1,
+        "react/require-default-props": 0,
+        "react/no-array-index-key": 0,
+        "react/jsx-props-no-spreading": 0,
+        "react/forbid-prop-types": 0,
+        "import/order": 0,
+        "no-console": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "prefer-destructuring": 0,
+        "no-shadow": 0,
+        "no-unused-vars": [
+            1,
+            {
+                "ignoreRestSiblings": false
+            }
+        ],
+        "prettier/prettier": [
+            2,
+            {
+                "bracketSpacing": true,
+                "printWidth": 140,
+                "singleQuote": true,
+                "trailingComma": "none",
+                "tabWidth": 4,
+                "useTabs": false,
+                "endOfLine": "auto"
+            }
+        ]
+    }
+}

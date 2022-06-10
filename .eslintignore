@@ -1,2 +1,2 @@
-/src/serviceWorker.ts
-/src/setupTests.ts
+webpack.config.js
+serviceWorker.js
